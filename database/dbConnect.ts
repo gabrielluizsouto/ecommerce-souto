@@ -2,38 +2,17 @@ import mongoose from 'mongoose'
 
 const MONGODB_URI = process.env.MONGODB_URI
 
-/**
- * Global is used here to maintain a cached connection across hot reloads
- * in development. This prevents connections growing exponentially
- * during API Route usage.
- */
-
-// @ts-ignore
-let cached = global.mongoose
-
-if (!cached) {
-  // @ts-ignore
-  cached = global.mongoose = { conn: null, promise: null }
-}
-
 async function dbConnect() {
-  if (cached.conn) {
-    return cached.conn
+  const opts = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
   }
 
-  if (!cached.promise) {
-    const opts = {
-      useNewUrlParser: true,
-      useUnifiedTopology: true
-    }
-
-    // @ts-ignore
-    cached.promise = await mongoose.connect(MONGODB_URI, opts).then((mongoose) => {
-      return mongoose
-    })
-  }
-  cached.conn = await cached.promise
-  return cached.conn
+  // @ts-ignore
+  await mongoose.connect(MONGODB_URI, opts, () => {
+    console.log('connected to database');
+  });
 }
 
 export default dbConnect
