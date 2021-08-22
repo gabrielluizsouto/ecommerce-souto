@@ -9,7 +9,8 @@ import ProductController from '../database/controllers/product'
 import ProductModel from '../database/models/product'
 
 // @ts-ignore
-const Home: NextPage = ({ products }) => {
+// const Home: NextPage = ({ products }) => {
+const Home: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,7 +26,7 @@ const Home: NextPage = ({ products }) => {
         
 
           
-          {
+          {/* {
           // @ts-ignore
           products.products.map(prod => {
             return (
@@ -34,7 +35,7 @@ const Home: NextPage = ({ products }) => {
                 <p>{prod.price}</p>
               </div>
             )
-          })}
+          })} */}
       </main>
 
       <footer className={styles.footer}>
@@ -54,10 +55,10 @@ const Home: NextPage = ({ products }) => {
 }
 
 // @ts-ignore
-export async function getServerSideProps(context) {
-  var products = await ProductController.getProducts();
+// export async function getServerSideProps(context) {
+//   var products = await ProductController.getProducts();
 
-  return { props: { products: products } }
-}
+//   return { props: { products: products } }
+// }
 
 export default Home
