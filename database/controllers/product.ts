@@ -2,7 +2,7 @@ import dbConnect from '../dbConnect'
 import ProductModel from '../models/product'
 
 export const getProducts = async () => {
-    await dbConnect()
+    await dbConnect();
     
     /* find all the data in our database */
     const result = await ProductModel.find({});
