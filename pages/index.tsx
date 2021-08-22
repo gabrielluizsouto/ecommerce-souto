@@ -54,7 +54,7 @@ const Home: NextPage = ({ products }) => {
 }
 
 // @ts-ignore
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   var products = {}
   try{
     products = await getProducts();
