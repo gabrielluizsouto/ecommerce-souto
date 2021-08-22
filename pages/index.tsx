@@ -21,7 +21,7 @@ const Home: NextPage = ({ products }) => {
       <h1> Bem vindo ao Ecommerce</h1>
 
       <main className={styles.main}>
-          { products && products.products &&
+          {/* { products && products.products &&
           // @ts-ignore
           products.products.map(prod => {
             return (
@@ -29,20 +29,20 @@ const Home: NextPage = ({ products }) => {
                 <p>{prod.name} | <strong>{prod.price}</strong></p>
               </div>
             )
-          })}
+          })} */}
       </main>
     </div>
   )
 }
 
 // @ts-ignore
-export async function getServerSideProps(context) {
-  var products = {}
-  try{
-    products = await getProducts();
-  } catch(e){}
+// export async function getServerSideProps(context) {
+//   var products = {}
+//   try{
+//     products = await getProducts();
+//   } catch(e){}
   
-  return { props: { products } }
-}
+//   return { props: { products } }
+// }
 
 export default Home
