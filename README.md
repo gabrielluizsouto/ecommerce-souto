@@ -12,7 +12,7 @@ http://ecommerce-souto.herokuapp.com/
 - lib: contains the database connection file
 - controllers: contains the database manipulation logics
 - pages/api: contains the API endpoints
-- pages/<<folder>> contains the website pages prototypes/models/views 
+- pages/<< folder >> contains the website pages prototypes/models/views 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
