@@ -18,20 +18,15 @@ const Home: NextPage = ({ products }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        
+      <h1> Bem vindo ao Ecommerce</h1>
 
-          
+      <main className={styles.main}>
           { products &&
           // @ts-ignore
-          products.products.map(prod => {
+          products.map(prod => {
             return (
-              <div key={prod.name}>
-                <p>{prod.name}</p>
-                <p>{prod.price}</p>
+              <div key={prod.id}>
+                <p>{prod.id} - {prod.title}</p>
               </div>
             )
           })}
@@ -54,10 +49,14 @@ const Home: NextPage = ({ products }) => {
 }
 
 // @ts-ignore
-export async function getStaticProps(context) {
+export async function getServerSideProps(context) {
   var products = {}
   try{
-    products = await getProducts();
+    //products = await getProducts();
+
+    products = await fetch('https://jsonplaceholder.typicode.com/users/1/albums')
+      .then(response => response.json())
+
   } catch(e){}
   
   return { props: { products: products } }
