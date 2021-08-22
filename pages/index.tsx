@@ -40,10 +40,6 @@ export async function getServerSideProps(context) {
   var products = {}
   try{
     products = await getProducts();
-
-    // products = await fetch('https://jsonplaceholder.typicode.com/users/1/albums')
-    //   .then(response => response.json())
-
   } catch(e){}
   
   return { props: { products } }
