@@ -21,29 +21,16 @@ const Home: NextPage = ({ products }) => {
       <h1> Bem vindo ao Ecommerce</h1>
 
       <main className={styles.main}>
-          { products &&
+          { products && products.products &&
           // @ts-ignore
-          products.map(prod => {
+          products.products.map(prod => {
             return (
-              <div key={prod.id}>
-                <p>{prod.id} - {prod.title}</p>
+              <div key={prod.name}>
+                <p>{prod.name} | <strong>{prod.price}</strong></p>
               </div>
             )
           })}
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
     </div>
   )
 }
@@ -52,14 +39,14 @@ const Home: NextPage = ({ products }) => {
 export async function getServerSideProps(context) {
   var products = {}
   try{
-    //products = await getProducts();
+    products = await getProducts();
 
-    products = await fetch('https://jsonplaceholder.typicode.com/users/1/albums')
-      .then(response => response.json())
+    // products = await fetch('https://jsonplaceholder.typicode.com/users/1/albums')
+    //   .then(response => response.json())
 
   } catch(e){}
   
-  return { props: { products: products } }
+  return { props: { products } }
 }
 
 export default Home
