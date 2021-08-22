@@ -36,7 +36,7 @@ const Home: NextPage = ({ products }) => {
 }
 
 //@ts-ignore
-export async function getServerSideProps() {
+export async function getStaticProps() {
   var products = {}
   try{
     products = await getProducts();
