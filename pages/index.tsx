@@ -5,7 +5,7 @@ import styles from '../styles/Home.module.css'
 
 
 import dbConnect from '../database/dbConnect'
-import ProductController from '../database/controllers/product'
+import {getProducts} from '../database/controllers/product'
 import ProductModel from '../database/models/product'
 
 // @ts-ignore
@@ -57,7 +57,7 @@ const Home: NextPage = ({ products }) => {
 export async function getServerSideProps(context) {
   var products = {}
   try{
-    products = await ProductController.getProducts();
+    products = await getProducts();
   } catch(e){}
   
   return { props: { products: products } }

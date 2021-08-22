@@ -16,9 +16,3 @@ export const getProducts = async () => {
     
     return { products: products }
 }
-
-const ProductController = {
-  getProducts
-}
-
-export default ProductController;
