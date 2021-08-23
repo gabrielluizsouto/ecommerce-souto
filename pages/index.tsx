@@ -37,12 +37,14 @@ const Home: NextPage = ({ products }) => {
 
 //@ts-ignore
 export async function getStaticProps() {
+  await dbConnect();    
+
   var products = {}
   try{
     products = await getProducts();
   } catch(e){}
   
-  return { props: { products } }
+  return { props: { products: products } }
 }
 
 export default Home

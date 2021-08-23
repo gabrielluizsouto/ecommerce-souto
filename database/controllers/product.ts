@@ -1,8 +1,8 @@
-import dbConnect from '../dbConnect'
+//import dbConnect from '../dbConnect'
 import ProductModel from '../models/product'
 
 export const getProducts = async () => {
-  await dbConnect();    
+  //await dbConnect();    
   
   const result = await ProductModel.find({});
   
