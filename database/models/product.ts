@@ -9,7 +9,8 @@ const ProductSchema = new mongoose.Schema({
     image: { type: String },
     stock: { type: Number },
     rating: { type: Number},
-    variants: [String]
+    variants: [String],
+    category: { type: String }
 });
 
 export default mongoose.models.Product || mongoose.model('Product', ProductSchema);

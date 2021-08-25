@@ -12,9 +12,9 @@ const createDump = (arrayLength = 100) => {
 
     let a = new Array(arrayLength);
     for (let i = 0; i < a.length; i++) {
-        const minPrice = 10;
-        const maxPrice = 5000;
-        const randomStock = Math.floor(Math.random() * 100);
+        const minPrice = 1;
+        const maxPrice = 2500;
+        const randomStock = Math.floor(Math.random() * 50);
         const randomPrice = Math.random() * (+maxPrice - +minPrice) + +minPrice;
         const salePrice = !!Math.floor((Math.random() * 1000) % 2)
         ? randomPrice * (Math.floor(Math.random() * (50 - 10) + 10) / 100)

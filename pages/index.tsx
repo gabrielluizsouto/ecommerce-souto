@@ -1,21 +1,21 @@
 import type { NextPage } from 'next'
-import styles from '../styles/Home.module.css'
+//import styles from '../styles/Home.module.css'
 
 import Product from '../database/controllers/product'
 
 // @ts-ignore
 const Home: NextPage = ({ products }) => {
   return (
-    <div className={styles.container}>
+    <div>
       <h1> Bem vindo ao Ecommerce</h1>
 
-      <main className={styles.main}>
+      <main>
           { products && products.products &&
           // @ts-ignore
           products.products.map(prod => {
             return (
               <div key={prod.name}>
-                <p>{prod.id} | {prod.name} | <strong>{prod.price}</strong></p>
+                <p>{prod.id} | {prod.name} | <strong>{prod.price}</strong> | {prod.category}</p>
               </div>
             )
           })}
