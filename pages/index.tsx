@@ -1,5 +1,5 @@
 import type { NextPage } from 'next'
-//import styles from '../styles/Home.module.css'
+import Image from 'next/image'
 
 import Product from '../database/controllers/product'
 
@@ -16,6 +16,7 @@ const Home: NextPage = ({ products }) => {
             return (
               <div key={prod.name}>
                 <p>{prod.id} | {prod.name} | <strong>{prod.price}</strong> | {prod.category}</p>
+                <Image src={prod.image} alt={prod.name} width={100} height={100}/>
               </div>
             )
           })}
