@@ -1,8 +1,8 @@
-//import dbConnect from '../dbConnect'
+import dbConnect from '../dbConnect'
 import ProductModel from '../models/product'
 
-export const getProducts = async () => {
-  //await dbConnect();    
+const getProducts = async (): Promise<Object> => {
+  await dbConnect();    
   
   const result = await ProductModel.find({});
   
@@ -10,8 +10,15 @@ export const getProducts = async () => {
     const product = doc.toObject()
     product._id = null
     product.__v = null
+    
     return product
   });
   
   return { products: products }
 }
+
+const Product = {
+  getProducts,
+}
+
+export default Product;

@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {getProducts} from '../../database/controllers/product'
+import Product from '../../database/controllers/product'
 
 type Data = {
   products: Array<Object>
@@ -11,7 +11,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   try {
-    var products = await getProducts();
+    var products = await Product.getProducts();
 
     // @ts-ignore
     res.status(200).json({prop: products.products});
