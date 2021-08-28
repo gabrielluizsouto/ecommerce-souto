@@ -7,6 +7,7 @@ export const ProductSchema = new mongoose.Schema<ProductInterface>({
     id: { type: Number, required: true },
     name: { type: String, required: true },
     price: { type: Number, required: true },
+    previousPrice: { type: Number },
     image: { type: String },
     stock: { type: Number },
     rating: { type: Number},

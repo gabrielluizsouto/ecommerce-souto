@@ -16,6 +16,7 @@ const getProducts = async (): Promise<{length: number, products: Array<Displayab
         image: doc.image,
         stock: doc.stock,
         price: doc.price,
+        previousPrice: doc.previousPrice,
         rating: doc.rating,
         category: doc.category,
         variants: doc.variants
@@ -49,6 +50,7 @@ const getProduct = async (productId: number): Promise<DisplayableProductInterfac
     image: result[0].image,
     stock: result[0].stock,
     price: result[0].price,
+    previousPrice: result[0].previousPrice,
     rating: result[0].rating,
     category: result[0].category,
     variants: result[0].variants
@@ -68,6 +70,7 @@ const findProducts = async (searchString: string): Promise<{length: number, prod
       image: doc.image,
       stock: doc.stock,
       price: doc.price,
+      previousPrice: doc.previousPrice,
       rating: doc.rating,
       category: doc.category,
       variants: doc.variants
@@ -82,7 +85,7 @@ const getProductsByCategory = async (categorySearched: string): Promise<{length:
   await dbConnect();    
   
   try{
-    const result: Array<ProductInterface> = await ProductModel.find({category: new RegExp(categorySearched, 'ig')});
+    const result: Array<ProductInterface> = await ProductModel.find({category: new RegExp('^' + categorySearched + '$', 'ig')});
     const products: Array<DisplayableProductInterface> = result.map((doc: DisplayableProductInterface) => {
       return {
         id: doc.id,
@@ -90,6 +93,7 @@ const getProductsByCategory = async (categorySearched: string): Promise<{length:
         image: doc.image,
         stock: doc.stock,
         price: doc.price,
+        previousPrice: doc.previousPrice,
         rating: doc.rating,
         category: doc.category,
         variants: doc.variants

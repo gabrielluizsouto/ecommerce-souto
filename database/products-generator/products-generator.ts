@@ -16,9 +16,7 @@ const createDump = (arrayLength = 100) => {
         const maxPrice = 2500;
         const randomStock = Math.floor(Math.random() * 50);
         const randomPrice = Math.random() * (+maxPrice - +minPrice) + +minPrice;
-        const salePrice = !!Math.floor((Math.random() * 1000) % 2)
-        ? randomPrice * (Math.floor(Math.random() * (50 - 10) + 10) / 100)
-        : randomPrice;
+        const previousPrice = randomPrice * 1.15;
         const randomRating = Math.random() * (5 - 1) + 1;
         const randomVariants = (quantity: number) => {
             let array = [];
@@ -42,14 +40,13 @@ const createDump = (arrayLength = 100) => {
             )}`,
             stock: randomStock,
             price: randomPrice.toFixed(2),
+            previousPrice: previousPrice.toFixed(2),
             rating: parseInt(randomRating.toFixed(0)),
             variants: randomVariants(Math.floor(Math.random() * 4)),
             category: randomCategory()
         };
 
     }
-
-    //console.log('products', a)
 
     return a;
 };
@@ -60,7 +57,9 @@ const connectToDB = async () => {
 }
 
 const saveProductsInDB = async (products: Array<Object>) => {
-    await Product.insertMany(products)
+    await Product.insertMany(products);
+    console.log('saved products in db')
+    console.log(products)
 }
 
 const run = async (QUANTITY: number) => {
