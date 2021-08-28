@@ -76,7 +76,7 @@ const findProducts = async (searchString: string): Promise<{length: number, prod
       variants: doc.variants
     }
   })
-  console.log('###', {length: result.length, result});
+
   return {length: result.length, products};
 }
 

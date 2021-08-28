@@ -1,0 +1,10 @@
+.productsContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.productName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

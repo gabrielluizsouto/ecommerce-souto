@@ -34,3 +34,9 @@
 .productPrice {
     font-size: x-large;
 }
+
+@media (max-width: 412px) {
+    .productCard {
+        width: 100%;
+    }
+}

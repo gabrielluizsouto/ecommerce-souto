@@ -5,7 +5,7 @@ import { useRouter } from 'next/dist/client/router'
 import { useEffect } from 'react'
 
 //styles
-//import '../styles/Home.module.css'
+import styles from './Product.module.css'
 
 //internal files
 import Product from '../../database/controllers/product'
@@ -30,9 +30,9 @@ const ProductDetailsBox: NextPage<Props> = ({ product }) => {
 
       </div>
       <Logo />
-      <div className="products-container">
-
-        <div key={product.name}>
+      
+      <div className={styles.productsContainer}>
+        <div key={product.name} className={styles.productName}>
           <p>{product.id} | {product.name} | <strong>{product.price}</strong> | {product.category}</p>
           <Image src={product.image} alt={product.name} width={300} height={300}/>
         </div>
@@ -44,8 +44,6 @@ const ProductDetailsBox: NextPage<Props> = ({ product }) => {
       <div className="barra de busca">
 
       </div>
-
-      <ProductCard product={product}/>
 
     </div>
   )
