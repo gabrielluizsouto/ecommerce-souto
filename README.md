@@ -3,16 +3,32 @@
 ## stack
 - Programming language: Typescript
 - Running on: Node JS
-- Framework: React JS, Next JS
+- Frameworks/Libraries: React JS, Next JSs
 
 ### Website
-http://ecommerce-souto.herokuapp.com/
+https://ecommerce-souto.herokuapp.com/
 
 ### Folders
 - lib: contains the database connection file
 - controllers: contains the database manipulation logics
 - pages/api: contains the API endpoints
 - pages/<< folder >> contains the website pages prototypes/models/views 
+
+### API
+- get all products: [/api/products](https://ecommerce-souto.herokuapp.com/api/products)
+- get one product by id: [/api/product/{{id}}](https://ecommerce-souto.herokuapp.com/api/product/{{id}})
+- search products (name and category included): [/api/findProducts/{{search_term}}](https://ecommerce-souto.herokuapp.com/api/findProducts/games)
+- get products by category: [/api/findProducts/{{search_term}}](https://ecommerce-souto.herokuapp.com/api/findProducts/tvs)
+
+
+
+
+
+.
+.
+.
+.
+.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 

@@ -2,13 +2,13 @@ import type { NextPage } from 'next'
 import Image from 'next/image'
 
 import Product from '../database/controllers/product'
+import { DisplayableProductInterface } from '../src/interfaces'
 
 // @ts-ignore
 const Home: NextPage = ({ products }) => {
   return (
     <div>
-      <h1> Bem vindo ao Ecommerce</h1>
-
+      <h1> Bem vindo ao Ecommerce</h1> {console.log(products)}
       <main>
           { products && products.products &&
           // @ts-ignore
@@ -26,13 +26,15 @@ const Home: NextPage = ({ products }) => {
 }
 
 export async function getStaticProps() {
-  var products = {}
+  var products: {length: number, products: Array<DisplayableProductInterface>, success: boolean};
 
-  try{
-    products = await Product.getProducts();
-  } catch(e){}
-  
-  return { props: { products } }
+  products = await Product.getProducts();
+
+  return { 
+    props: {
+      products
+    }  
+  }
 }
 
 export default Home

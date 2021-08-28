@@ -20,7 +20,7 @@ const createDump = (arrayLength = 100) => {
         ? randomPrice * (Math.floor(Math.random() * (50 - 10) + 10) / 100)
         : randomPrice;
         const randomRating = Math.random() * (5 - 1) + 1;
-        const randomVariants = (quantity: any) => {
+        const randomVariants = (quantity: number) => {
             let array = [];
             for (let index = 0; index < quantity; index++) {
                 array[index] = uniqueNamesGenerator({dictionaries: [colors]});
@@ -54,14 +54,12 @@ const createDump = (arrayLength = 100) => {
     return a;
 };
 
-
-
 const connectToDB = async () => {
     await dbConnect();
     console.log('connected to DB')
 }
 
-const saveProductsInDB = async (products: any) => {
+const saveProductsInDB = async (products: Array<Object>) => {
     await Product.insertMany(products)
 }
 

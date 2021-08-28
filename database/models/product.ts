@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
+import { ProductInterface } from '../../src/interfaces'
 
-/* PetSchema will correspond to a collection in your MongoDB database. */
-const ProductSchema = new mongoose.Schema({
+
+export const ProductSchema = new mongoose.Schema<ProductInterface>({
     _id: { type: mongoose.Schema.Types.ObjectId },
     id: { type: Number, required: true },
     name: { type: String, required: true },
@@ -13,4 +14,8 @@ const ProductSchema = new mongoose.Schema({
     category: { type: String }
 });
 
-export default mongoose.models.Product || mongoose.model('Product', ProductSchema);
+const ProductModel: mongoose.Model<ProductInterface, {}, {}> = mongoose.models.Product || mongoose.model<ProductInterface>('Product', ProductSchema);
+//const ProductModel: mongoose.Model<ProductInterface, {}, {}> = mongoose.model<ProductInterface>('Product', ProductSchema);
+
+export default ProductModel;
+

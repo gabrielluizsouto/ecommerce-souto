@@ -1,9 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next'
-import Product from '../../database/controllers/product'
+import Product from '../../../database/controllers/product'
+import { DisplayableProductInterface } from '../../../src/interfaces'
 
 type Data = {
-  products: Array<Object>
+  product: DisplayableProductInterface
 }
 
 export default async function handler(
@@ -11,10 +12,11 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   try {
-    var products = await Product.getProducts();
+    var { searchString } = req.query
+    var products = await Product.findProducts(searchString.toString());
 
     // @ts-ignore
-    res.status(200).json({prop: products.products});
+    res.status(200).json(products);
   } catch(err) {
     throw err;
   }
