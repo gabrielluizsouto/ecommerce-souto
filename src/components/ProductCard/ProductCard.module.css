@@ -10,6 +10,10 @@
     border-radius: 5px;
 }
 
+.productCard:hover {
+    box-shadow: 0 0 3px #000000, 0 0 5px #d5fa00;
+}
+
 .productImage {
     margin-bottom: 1vh;
     display: flex;

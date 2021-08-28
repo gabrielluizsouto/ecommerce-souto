@@ -59,7 +59,6 @@ const connectToDB = async () => {
 const saveProductsInDB = async (products: Array<Object>) => {
     await Product.insertMany(products);
     console.log('saved products in db')
-    console.log(products)
 }
 
 const run = async (QUANTITY: number) => {

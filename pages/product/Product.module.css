@@ -3,8 +3,28 @@
     justify-content: center;
 }
 
+.productImage {
+    margin-bottom: 1vh;
+}
+
 .productName {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-size: x-large;
+    margin-left: 1vh;
+}
+
+.productPreviousPrice {
+    text-decoration: line-through;
+}
+
+.productPrice {
+    font-size: xx-large;
+}
+
+.nameAndIdContainer {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
 }

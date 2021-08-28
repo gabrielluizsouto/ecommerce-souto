@@ -32,11 +32,17 @@ const ProductDetailsBox: NextPage<Props> = ({ product }) => {
       <Logo />
       
       <div className={styles.productsContainer}>
-        <div key={product.name} className={styles.productName}>
-          <p>{product.id} | {product.name} | <strong>{product.price}</strong> | {product.category}</p>
-          <Image src={product.image} alt={product.name} width={300} height={300}/>
+        <div key={product.name}>
+          <div className={styles.nameAndIdContainer}>
+            <div className={styles.productId}>{product.id}</div>
+            <div className={styles.productName}>{product.name}</div>
+          </div> 
+          <div className={styles.productImage}>
+            <Image src={product.image} alt={product.name} width={300} height={300}/>
+          </div>
+          <div className={styles.productPreviousPrice}>De: R$: {product.previousPrice}</div>
+          <div className={styles.productPrice}>Por: R$: {product.price}</div>
         </div>
-
       </div>
       <div className="footer-container">
 
