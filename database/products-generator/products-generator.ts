@@ -21,7 +21,7 @@ const createDump = (arrayLength = 100) => {
         const randomVariants = (quantity: number) => {
             let array = [];
             for (let index = 0; index < quantity; index++) {
-                array[index] = uniqueNamesGenerator({dictionaries: [colors]});
+                array[index] = ['black', 'white', 'gray', 'red', 'green', 'blue', 'yellow'][Math.floor(Math.random() * 7)]
             }
             return array;        
         };

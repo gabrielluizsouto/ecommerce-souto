@@ -1,0 +1,19 @@
+.headerConteiner {
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.logoAndSearch {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+@media (max-width: 412px) {
+    .logoAndSearch {
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -8,8 +8,9 @@ import Image from 'next/image'
 //internal files
 import Product from '../database/controllers/product'
 import { DisplayableProductInterface } from '../src/interfaces'
-import Logo from '../src/components/Logo'
+import Header from '../src/components/Header'
 import ProductCard from '../src/components/ProductCard'
+import Hero from '../src/components/Hero'
 
 interface Props {
   products?: {length: number, products: Array<DisplayableProductInterface>, success: boolean};
@@ -18,13 +19,14 @@ interface Props {
 const Home: NextPage<Props> = ({ products }) => {
   return (
     <div className="main-container">
-      {console.log(products)}
+      {console.log('###', products)}
       <div className="search-bar-container">
 
       </div>
-      <div className="logo-container">
-        <Logo />
-      </div>
+
+      <Header />
+      <Hero />
+
       <div className="products-container">
         { products && products.products &&
           // @ts-ignore

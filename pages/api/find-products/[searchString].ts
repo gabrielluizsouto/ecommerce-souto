@@ -12,7 +12,7 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
   try {
-    var { searchString } = req.query
+    var searchString = req.query && req.query['searchString'];
     var products = await Product.findProducts(searchString.toString());
 
     // @ts-ignore

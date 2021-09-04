@@ -25,3 +25,31 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
+
+.variant-black {
+  background-color: black;
+}
+
+.variant-gray {
+  background-color: gray;
+}
+
+.variant-white {
+  background-color: white;
+}
+
+.variant-green {
+  background-color: green;
+}
+
+.variant-red {
+  background-color: red;
+}
+
+.variant-blue {
+  background-color: blue;
+}
+
+.variant-yellow {
+  background-color: yellow;
+}

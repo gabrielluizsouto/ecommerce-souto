@@ -23,6 +23,24 @@
     font-size: xx-large;
 }
 
+.productVariants {
+    display: flex;
+}
+
+.variant {
+    margin-right: 1vh;
+    margin-bottom: 1vh;
+    border-radius: 50px;
+    height: 25px;
+    width: 25px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.variant:hover {
+    cursor: pointer
+}
+
 .nameAndIdContainer {
     display: flex;
     align-items: flex-end;

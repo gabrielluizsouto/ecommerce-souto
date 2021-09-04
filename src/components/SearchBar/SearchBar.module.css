@@ -1,0 +1,34 @@
+.searchBarContainer {
+    margin-left: 2vh;
+    margin-right: 2vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchLabel {
+    font-size: large;
+    margin-left: 1vh;
+    margin-right: 1vh;
+
+}
+
+.searchInput {
+    width: 400px;
+    height: 50px;
+
+    font-size: x-large;
+}
+
+.searchButton {
+    margin-left: 1vh;
+    margin-right: 1vh;
+
+    background-color: greenyellow;
+}
+
+.searchButton:hover {
+    cursor: pointer;
+}

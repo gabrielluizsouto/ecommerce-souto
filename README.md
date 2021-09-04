@@ -21,6 +21,9 @@ https://ecommerce-souto.herokuapp.com/
 - get products by category: [/api/findProducts/{{search_term}}](https://ecommerce-souto.herokuapp.com/api/findProducts/tvs)
 
 
+### Breakpoints
+Medium	≥768px
+X-Small	<576px
 
 
 

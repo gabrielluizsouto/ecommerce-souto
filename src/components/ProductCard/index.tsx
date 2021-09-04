@@ -21,8 +21,8 @@ const ProductCard: React.FC<Props> = ({ product, imageWidth = 200, imageHeight =
                     {product.rating}
                     <StarRating starsNumber={product.rating}/>
                 </div>
-                <div className={styles.productPreviousPrice}>De: R$ {product.previousPrice}</div>
-                <div className={styles.productPrice}>Por: R$ {product.price}</div>
+                <div className={styles.productPreviousPrice}>From: ${product.previousPrice}</div>
+                <div className={styles.productPrice}>To: ${product.price}</div>
             </a>
         </div>
     )

@@ -1,0 +1,25 @@
+.menuContainer {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.menuCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: greenyellow;
+    font-size: x-large;
+    width: 20vh;
+    max-width: 200px;
+    border-radius: 5%;
+    margin-right: 10px;
+}
+
+.menuCategory:hover {
+    background-color: gray;
+}
+
+@media (max-width: 412px) {
+
+}
