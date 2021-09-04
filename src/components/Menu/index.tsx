@@ -4,8 +4,8 @@ import Link from 'next/link'
 const Menu: React.FC = () => {
     return (
         <div className={styles.menuContainer}>
-            <Link href="/" className={styles.menuCategory}>
-                <a><span>
+            <Link href="/">
+                <a className={styles.menuCategory}><span>
                     All Products
                 </span></a>
             </a>
