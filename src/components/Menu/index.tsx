@@ -8,7 +8,7 @@ const Menu: React.FC = () => {
                 <a className={styles.menuCategory}><span>
                     All Products
                 </span></a>
-            </a>
+            </Link>
             <a href="/category/tvs" className={styles.menuCategory}>
                 <span>
                     TVs
