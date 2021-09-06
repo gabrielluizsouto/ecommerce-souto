@@ -4,11 +4,11 @@ import Link from 'next/link'
 const Menu: React.FC = () => {
     return (
         <div className={styles.menuContainer}>
-            {/*<a href="/" className={styles.menuCategory}>
-                <span>
+            <Link href="/" passHref>
+                <a  className={styles.menuCategory}>
                     All Products
-                </span>
-            </a>*/}
+                </a>
+            </Link>
             <a href="/category/tvs" className={styles.menuCategory}>
                 <span>
                     TVs
