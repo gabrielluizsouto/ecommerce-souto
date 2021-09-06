@@ -9,31 +9,39 @@ const Menu: React.FC = () => {
                     All Products
                 </a>
             </Link>
-            <a href="/category/tvs" className={styles.menuCategory}>
-                <span>
+            <Link  href="/category/tvs">
+                <a className={styles.menuCategory}>
                     TVs
-                </span>
-            </a>
-            <a href="/category/games" className={styles.menuCategory}>
-                <span>
-                    Games
-                </span>
-            </a>
-            <a href="/category/sound systems" className={styles.menuCategory}>
-                <span>
-                    Sound systems
-                </span>
-            </a>
-            <a href="/category/phones" className={styles.menuCategory}>
-                <span>
-                    Phones
-                </span>
-            </a>
-            <a href="/category/computers" className={styles.menuCategory}>
-                <span>
-                    Computers
-                </span>
-            </a>
+                </a>
+            </Link>
+            <Link href="/category/games" >
+                <a className={styles.menuCategory}>
+                    <span>
+                        Games
+                    </span>
+                </a>
+            </Link>
+            <Link href="/category/sound systems">
+                <a  className={styles.menuCategory}>
+                    <span>
+                        Sound systems
+                    </span>
+                </a>
+            </Link>
+            <Link href="/category/phones" >
+                <a className={styles.menuCategory}>
+                    <span>
+                        Phones
+                    </span>
+                </a>
+            </Link>
+            <Link href="/category/computers" >
+                <a className={styles.menuCategory}>
+                    <span>
+                        Computers
+                    </span>
+                </a>
+            </Link>
         </div>
     );
 }
